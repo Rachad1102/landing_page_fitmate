@@ -49,6 +49,9 @@ app.get('/discover/:contract', (req, res) => {
 app.get('/', (req, res) => {
     res.render('pages/index', {title: 'Fitmate - Master Notion for Wellness and Life', content} );
 });
+app.get('/privacy_policy', (req, res) => {
+    res.render('pages/privacy', {title: 'Fitmate - Privacy Policy'} );
+});
 
 
 

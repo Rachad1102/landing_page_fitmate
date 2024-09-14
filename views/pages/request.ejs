@@ -18,7 +18,7 @@
           </p>
         </div>
       
-        <form action="#" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
+        <form  class="mx-auto mb-0 mt-8 max-w-md space-y-4">
           <div>
             <label for="name" class="sr-only">Name</label>
             <div class="relative">
@@ -52,11 +52,22 @@
           </div>
       
           <div>      
-            <button type="submit" class="inline-block w-full rounded-lg bg-black px-5 py-3 text-sm font-medium text-white">Submit</button>
+            <button onclick="event.preventDefault();
+            document.getElementById('submit_req').classList.remove('opacity-0');
+           document.getElementById('submit_req').classList.remove('translate-y-full');
+           setTimeout(() =>{
+             document.getElementById('submit_req').classList.add('opacity-0');
+            document.getElementById('submit_req').classList.add('translate-y-full');
+
+           }, 1500)
+
+"  class="inline-block w-full rounded-lg bg-black px-5 py-3 text-sm font-medium text-white">Submit</button>
           </div>
         </form>
       </div>
     </div>
+       <!-- popup - message de reception du mail -->
+       <aside id="submit_req" class="fixed bottom-4 translate-y-full opacity-0 font-semibold  transition duration-300 start-4 z-50 flex items-center justify-center gap-4 rounded-lg bg-[#37413A] px-5 py-3 text-white">Thank you for your request, we'll response you soon. </aside>
     <%- include('../partials/footer.ejs') %>
 
   </body>

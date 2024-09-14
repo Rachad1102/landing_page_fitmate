@@ -59,20 +59,20 @@
 </div>
 
 <!-- templates view -->
-      <div id="content_templates" class="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8">
+      <div id="content_templates" class="my-6 gap-y-2 xl:gap-x-4 md:gap-y-4  grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3  justify-start">
         <!-- card template -->
               <!-- card by js -->
               <% const genereTemplates = (content) =>{ %>
                 <% if (content.length > 0) { %>
                   <% content.forEach( container => { %>
-                   <a  id="<%= container.category %>" href="/templates/<%= container.contractTitle %>" class=" group relative mx-auto md:mx-2 block  w-fit ">
+                   <a  id="<%= container.category %>" href="/templates/<%= container.contractTitle %>" class=" group relative mx-auto md:mx-2 block  mt-4 w-fit ">
                    
                     <% if (container.isPremium) { %>
                       <span class="rounded-full bg-black px-4 py-2 text-xs font-medium tracking-wider absolute right-2 top-2 text-white">PRO</span>
                     <% } %>
 
-                     <div class="p-2 shadow-md mb-4 rounded-lg border transition ease-out duration-300 border-gray-100 group-hover:border-gray-200">
-                       <img src="<%= container.cover %>" class="w-full h-full rounded-lg object-cover" alt="<%= container.title %> cover"
+                     <div class="p-2 shadow-md mb-2 rounded-lg border transition ease-out duration-300 border-gray-100 group-hover:border-gray-200">
+                       <img src="<%= container.cover %>" class="my-auto aspect-[8/5] object-contain w-full h-full rounded-lg" alt="<%= container.title %> cover"
                        />
                      </div>
                      <h3 class="font-semibold text-base md:text-xl text-gray-700 mt-2">
