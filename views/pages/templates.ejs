@@ -8,7 +8,7 @@
     <!-- card section -->
 <section class="w-11/12 mx-auto">
 <div>
-  <h1 class="mt-24 mb-6 md:text-4xl text-2xl font-semibold">Templates</h1>
+  <h1 class="mt-24 mb-6 md:text-4xl text-2xl text-[#37413A] font-semibold">Templates</h1>
   <h5 class="font-medium text-gray-400 md:text-base text-sm w-11/12 md:w-1/2">
     Discover ready-made Notion templates and setups for wellness and life.
   </h5>
@@ -24,7 +24,7 @@
     type="text"
     id="Search"
     placeholder="Search for..."
-    class="w-full ps-10 md:text-lg rounded-md border-gray-200 border bg-gray-100 py-2.5  pe-10  text-xs focus:outline-none"
+    class="w-full ps-10 md:text-lg rounded-full border-gray-200 border bg-gray-100 py-2.5  pe-10  text-xs focus:outline-none"
   />
 
   <span class="absolute inset-y-0 start-0 grid w-10 place-content-center">
@@ -59,7 +59,7 @@
 </div>
 
 <!-- templates view -->
-      <div id="content_templates" class="my-6 gap-y-2 md:gap-y-4 md:gap-x-6 grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3  justify-start">
+      <div id="content_templates" class="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8">
         <!-- card template -->
               <!-- card by js -->
               <% const genereTemplates = (content) =>{ %>
@@ -72,7 +72,7 @@
                     <% } %>
 
                      <div class="p-2 shadow-md mb-4 rounded-lg border transition ease-out duration-300 border-gray-100 group-hover:border-gray-200">
-                       <img src="<%= container.cover %>" class="w-full h-full rounded-lg my-auto aspect-[8/5] object-contain" alt="<%= container.title %> cover"
+                       <img src="<%= container.cover %>" class="w-full h-full rounded-lg object-cover" alt="<%= container.title %> cover"
                        />
                      </div>
                      <h3 class="font-semibold text-base md:text-xl text-gray-700 mt-2">
@@ -91,7 +91,7 @@
       </div>
 
 <!-- if error exists, show the request's card -->      
-   <div id="submit_req" class=" hidden bg-gray-100 flex-col rounded-lg w-full md:h-[400px] h-[250px] space-x-8 flex justify-center items-center">
+   <div id="submit_req" class=" hidden bg-gray-100 flex-col rounded-xl w-full md:h-[400px] h-[250px] space-x-8 flex justify-center items-center">
      <div class="w-10/12 mx-auto flex flex-col justify-center items-center">
       <h1 class="font-semibold text-2xl md:text-4xl mb-4 text-center ">Couldn't you find what you were looking for?</h1>
       <h3 class="text-gray-400 font-medium md:text-xl text-sm mb-4">Suggest an idea of our next tutorial, template.</h3>

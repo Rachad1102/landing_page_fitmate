@@ -1,5 +1,4 @@
 
-
 //menu responsive fonction 
 const btnOpen = document.getElementById('btnOpen');
 const menuMobile = document.getElementById('menu-mobile');
@@ -67,41 +66,33 @@ const submitReq = document.getElementById('submit_req');
 
 inputSearch.addEventListener('input', ()=>{
     const query = inputSearch.value.toLowerCase();
-      
+    let hasResults = false;
+
 allTitles.forEach(title =>{
     title.parentElement.classList.add('hidden');
     const text = title.textContent.toLowerCase();
-    text.includes(query) ? title.parentElement.classList.remove('hidden') : submitReq.classList.remove('hidden');
 
+    if(text.includes(query)){
+        title.parentElement.classList.remove('hidden');
+        hasResults =true;
+    }
+    // if(document.getElementById('content_templates').innerText= ""){
+        //     submitReq.classList.add('hidden');
+        // }
+        
+        //console.log(allTitles.length);
 })
-if(inputSearch.value === ""){
+if(!hasResults){
+    submitReq.classList.remove('hidden');
+}else{
     submitReq.classList.add('hidden');
 }
 })
 
-//popup message after subscription for newsletter
-const subscribeBtn = document.getElementById('subscribe_btn');
-const popupSubmit = document.getElementById('subscribe_popup');
-
-subscribeBtn.addEventListener('click', (event) =>{
-    event.preventDefault();
-
-    popupSubmit.classList.remove('opacity-0')
-    popupSubmit.classList.remove('translate-y-full')
-    popupSubmit.classList.add('translate-y-0')
-    popupSubmit.classList.add('opacity-100')
-
-    setTimeout(() => {
-        popupSubmit.classList.remove('translate-y-0')
-        popupSubmit.classList.remove('opacity-100')
-        popupSubmit.classList.add('translate-y-full')
-        popupSubmit.classList.add('opacity-0')
-    }, 2000 );
-
-})
 
 
 
+ 
 
 
 

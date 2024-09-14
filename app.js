@@ -1,8 +1,9 @@
 const express = require('express');
 
-const fs = require('fs');
+//const fs = require('fs');
 
 const content = require('./public/scripts/content');
+const discoverdb = require('./public/scripts/discoverdb');
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(express.static('public'));
 
 
 app.get('/discover', (req, res) => {
-  res.render('pages/discover', {title: 'Fitmate Discover', content})
+  res.render('pages/discover', {title: 'Fitmate Discover', content : discoverdb})
 })
 
 app.get('/request', (req, res) => {
@@ -37,10 +38,11 @@ app.get('/templates/:contract', (req, res) => {
   res.render('pages/details', {title: 'Fitmate Templates - ' + content[id].title, content, id})
     
   })
+
 app.get('/discover/:contract', (req, res) => {
   const contract = req.params.contract;
-  const id = content.findIndex(container => container.contractTitle === contract);
-  res.render('pages/discdetails', {title: 'Fitmate Discover - ' + content[id].title, content, id})
+  const id = discoverdb.findIndex(container => container.contractTitle === contract);
+  res.render('pages/discdetails', {title: 'Fitmate Discover - ' + discoverdb[id].title, discoverdb, id})
     
   })
 
